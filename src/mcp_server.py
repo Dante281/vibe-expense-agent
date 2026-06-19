@@ -3,10 +3,9 @@ import os
 from typing import List, Dict, Any
 
 DATABASE_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)),
-    "data",
-    "expenses.json"
+    os.path.dirname(os.path.dirname(__file__)), "data", "expenses.json"
 )
+
 
 def get_expenses_list() -> List[Dict[str, Any]]:
     """
@@ -20,6 +19,7 @@ def get_expenses_list() -> List[Dict[str, Any]]:
         except json.JSONDecodeError:
             return []
 
+
 def get_monthly_total() -> float:
     """
     MCP Tool: Summarizes the total amount of money spent in the current calendar month.
@@ -27,7 +27,10 @@ def get_monthly_total() -> float:
     # Placeholder return
     return 0.0
 
-def add_expense_record(description: str, amount: float, date: str, category: str) -> str:
+
+def add_expense_record(
+    description: str, amount: float, date: str, category: str
+) -> str:
     """
     MCP Tool: Appends a structured expense record to the local JSON database file.
     """

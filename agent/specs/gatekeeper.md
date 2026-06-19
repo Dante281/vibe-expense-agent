@@ -20,7 +20,7 @@ The **Gatekeeper Agent** is the user-facing security shield. It acts as the pars
 ## 2. Contexto y Objetivos
 - **Current Problem**: Financial inputs coming from untrusted user strings can introduce prompt injection attacks, aiming to wipe database files, execute system commands, or modify application configuration (e.g., budget limits).
 - **Implementation Objective**: Implement a robust sanitization and parsing engine using Gemini's structured output capability.
-- **Constraints**: 
+- **Constraints**:
   - Must run before the Analyst Agent receives any data.
   - Schema parsing must strictly conform to the defined JSON structure.
 

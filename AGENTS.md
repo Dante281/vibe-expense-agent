@@ -63,7 +63,7 @@ sequenceDiagram
 
 ## 📜 Development Guidelines & Constraints
 
-- **Security First**: 
+- **Security First**:
   - Never commit or log API keys or plaintext credentials. Use `.env` files.
   - Ensure Gatekeeper sanitization runs before Analyst processing.
 - **Library-First Principles**:

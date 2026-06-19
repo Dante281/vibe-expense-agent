@@ -1,11 +1,12 @@
-import os
 from typing import Dict, Any
+
 
 class GatekeeperAgent:
     """
     Gatekeeper Agent (Recibidor):
     Responsible for text sanitization, prompt injection checks, and structured JSON parsing.
     """
+
     def __init__(self):
         # Initialized configuration or client here
         pass
@@ -21,14 +22,16 @@ class GatekeeperAgent:
             "description": "",
             "amount": 0.0,
             "date": "",
-            "category": "Others"
+            "category": "Others",
         }
+
 
 class AnalystAgent:
     """
     Analyst Agent (Contador):
     Responsible for budget limit checks, tool interactions, and database records insertion.
     """
+
     def __init__(self, budget_limit: float = 500.00):
         self.budget_limit = budget_limit
 

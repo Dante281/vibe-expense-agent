@@ -1,10 +1,10 @@
 import os
-import sys
 from dotenv import load_dotenv
 from src.agents import GatekeeperAgent, AnalystAgent
 
 # Load environment configuration
 load_dotenv()
+
 
 def main():
     print("==================================================")
@@ -15,7 +15,7 @@ def main():
 
     # Instantiate agents
     gatekeeper = GatekeeperAgent()
-    
+
     budget_limit = float(os.getenv("MONTHLY_BUDGET_LIMIT", "500.00"))
     analyst = AnalystAgent(budget_limit=budget_limit)
 
@@ -42,6 +42,7 @@ def main():
         except (KeyboardInterrupt, EOFError):
             print("\nGoodbye!")
             break
+
 
 if __name__ == "__main__":
     main()

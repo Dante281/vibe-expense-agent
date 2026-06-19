@@ -20,7 +20,7 @@ The **Analyst Agent** evaluates the sanitized financial JSON payload emitted by 
 ## 2. Contexto y Objetivos
 - **Current Problem**: Structured expense data needs to be logged persistently in a private local file, and the user must be alerted immediately if the transaction breaches their monthly allowance limit.
 - **Implementation Objective**: Connect the agent to a local MCP server that handles database read/write actions, perform budget validation math, and write records to `data/expenses.json`.
-- **Constraints**: 
+- **Constraints**:
   - All file inputs and outputs must pass through the local MCP server tools.
   - The budget limit must be loaded dynamically from the environment.
 

@@ -8,7 +8,7 @@
 
 ## 🎯 Value Proposition
 
-Logging daily expenses manually is tedious. Most users prefer typing or saying a quick sentence like *"Spent $14 on coffee and bagels this morning"* rather than opening a spreadsheet and entering data row-by-row. 
+Logging daily expenses manually is tedious. Most users prefer typing or saying a quick sentence like *"Spent $14 on coffee and bagels this morning"* rather than opening a spreadsheet and entering data row-by-row.
 
 **Vibe Expense Agent** solves this by:
 1. **Zero-Friction Logging**: Accepting conversational inputs in natural language.
@@ -55,7 +55,7 @@ sequenceDiagram
         MCP->>DB: Read database
         DB-->>MCP: Return expenses array
         MCP-->>AN: Return current monthly total
-        
+
         alt Budget Exceeded
             AN-->>User: Warning: Budget exceeded!
         end

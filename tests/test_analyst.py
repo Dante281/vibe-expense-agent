@@ -1,5 +1,5 @@
-import pytest
 from src.agents import AnalystAgent
+
 
 def test_analyst_within_budget():
     """
@@ -13,13 +13,14 @@ def test_analyst_within_budget():
         "description": "Taxi",
         "amount": 20.00,
         "date": "2026-06-20",
-        "category": "Transport"
+        "category": "Transport",
     }
-    
+
     # Note: This will fail initially (Red phase of TDD)
     response = analyst.process_expense(mock_expense)
     assert "Warning" not in response
     assert "Logged" in response or "Success" in response
+
 
 def test_analyst_exceeds_budget():
     """
@@ -32,9 +33,9 @@ def test_analyst_exceeds_budget():
         "description": "Office Chair",
         "amount": 150.00,
         "date": "2026-06-20",
-        "category": "Shopping"
+        "category": "Shopping",
     }
-    
+
     # Note: This will fail initially (Red phase of TDD)
     response = analyst.process_expense(mock_expense)
     assert "Warning" in response or "exceed" in response.lower()
