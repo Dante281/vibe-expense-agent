@@ -1,68 +1,113 @@
-# Analyst Agent Specification 📊
+# Phase 1: Local CLI & Storage Core (Deliverable D2 - Analyst Agent Spec)
 
-The **Analyst Agent** (Contador) processes the validated structured output from the Gatekeeper. It performs budget analysis and calls local MCP tools to read and write from the local database.
-
----
-
-## 📋 Role Overview
-
-- **Input**: Sanitized JSON data from the Gatekeeper: `{description, amount, date, category}`.
-- **Output**: Confirmation message with budget status, plus a warning if the monthly budget is exceeded.
-- **Primary Responsibility**: Coordinate tool calling and evaluate expenditures against the monthly budget limit.
-
----
-
-## 🛠️ MCP Tools Binding
-
-The Analyst Agent is bound to a local Model Context Protocol (MCP) server that exposes the following tools:
-
-### 1. `get_monthly_total()`
-- **Purpose**: Sums up all expense records logged in the current calendar month.
-- **Parameters**: None.
-- **Returns**: `float` (total spending for the month).
-
-### 2. `add_expense_record(description, amount, date, category)`
-- **Purpose**: Appends a validated expense record to the local JSON database file.
-- **Parameters**:
-  - `description` (string)
-  - `amount` (float)
-  - `date` (string, YYYY-MM-DD)
-  - `category` (string, enum)
-- **Returns**: `"Success"` or error message.
-
-### 3. `get_expenses_list()`
-- **Purpose**: Returns all logged expense records for reporting.
-- **Parameters**: None.
-- **Returns**: Array of expense objects.
+## 0. Cabecera operativa (obligatoria)
+- Deliverable: `D2`
+- Fase: `PH1`
+- Estado: `In progress`
+- Prioridad: `P1`
+- Owner: `Analyst Agent`
+- Ultima actualizacion: `2026-06-20`
+- Dependencias: `D1`
+- Spec relacionada: `agent/roadmap.md`
 
 ---
 
-## 🧠 System Instruction Prompt
+## 1. Vision General
+The **Analyst Agent** evaluates the sanitized financial JSON payload emitted by the Gatekeeper, compares the transaction amount against the user's monthly budget limits, and invokes local MCP tools to read and write records from the database.
 
-```text
-You are the Analyst Agent for the Vibe Expense system. You receive structured expense data from the Gatekeeper.
-Your job is to:
-1. Call the `get_monthly_total()` tool to check the user's spending in the current month.
-2. Compare the updated total (current monthly total + new expense amount) against the user's budget limit of ${budget_limit}.
-3. If the limit is exceeded, prepare a BUDGET EXCEEDED warning message.
-4. Call `add_expense_record()` to permanently log the expense in the database.
-5. Respond to the user confirming the log, showing the new monthly total, and issuing a budget warning if applicable.
+---
+
+## 2. Contexto y Objetivos
+- **Current Problem**: Structured expense data needs to be logged persistently in a private local file, and the user must be alerted immediately if the transaction breaches their monthly allowance limit.
+- **Implementation Objective**: Connect the agent to a local MCP server that handles database read/write actions, perform budget validation math, and write records to `data/expenses.json`.
+- **Constraints**: 
+  - All file inputs and outputs must pass through the local MCP server tools.
+  - The budget limit must be loaded dynamically from the environment.
+
+---
+
+## 3. Alcance
+
+### Incluido
+- Loading configuration values (`MONTHLY_BUDGET_LIMIT`) from `.env`.
+- Invoking the `get_monthly_total()` MCP tool to calculate current monthly expenditures.
+- Comparing new amounts to ensure they don't exceed the limit, preparing warnings.
+- Invoking the `add_expense_record()` MCP tool to append the record to the database.
+
+### No incluido
+- Parsing raw text strings (delegated to the Gatekeeper Agent).
+- Direct local file writes (delegated to the local MCP server).
+
+---
+
+## 4. Cambios tecnicos
+
+### Backend
+- Class `AnalystAgent` in `src/agents.py` implementing audit and routing logic.
+- Local MCP Server tools in `src/mcp_server.py`.
+
+### Trazabilidad de archivos (obligatoria)
+
+#### Files touched (planned)
+- `src/agents.py` - Implement AnalystAgent class and connection to MCP tools.
+- `src/mcp_server.py` - Implement MCP server hosting database tools.
+- `tests/test_analyst.py` - Unit test suite verifying budget calculation warnings.
+- `data/expenses.json` - JSON database initialized with `[]`.
+
+#### Files touched (final)
+- *(To be completed when work is executed)*
+
+---
+
+## 5. Invariantes y guardrails
+- **Multi-Agent Constraint**: The Analyst Agent will only process inputs that have `is_malicious: false`.
+- **Database Safety**: Write transactions must be structured and validated.
+
+---
+
+## 6. ADRs del entregable
+`Sin ADR nuevo en este entregable`.
+
+---
+
+## 7. Validacion
+
+### Automatizado
+```bash
+# Run Analyst-specific tests
+pytest tests/test_analyst.py
 ```
 
+### Manual
+1. Insert mock database records and input values near the budget threshold to trigger and verify the Warning message.
+2. Verify that write actions correctly save records inside `data/expenses.json`.
+
 ---
 
-## 🧪 Trace Scenarios (Verification Contracts)
+## 8. Estado y Slices
 
-### Scenario 1: Normal Log (Within Budget)
-1. **Analyst receives**: `{ "description": "Taxi", "amount": 20.00, "date": "2026-06-20", "category": "Transport" }`
-2. **Analyst calls**: `get_monthly_total()` ➔ returns `$100.00`
-3. **Analyst evaluates**: New total `$120.00` is below the `$500.00` limit.
-4. **Analyst calls**: `add_expense_record("Taxi", 20.00, "2026-06-20", "Transport")` ➔ returns `"Success"`
-5. **Analyst outputs**: `"Logged $20.00 for Taxi under Transport. Monthly total is now $120.00 / $500.00."`
+### 8.1 Estado
+- Estado actual: `In progress`
+- Ultima actualizacion: `2026-06-20`
 
-### Scenario 2: Budget Exceeded Alert
-1. **Analyst receives**: `{ "description": "Office Chair", "amount": 150.00, "date": "2026-06-20", "category": "Shopping" }`
-2. **Analyst calls**: `get_monthly_total()` ➔ returns `$420.00`
-3. **Analyst evaluates**: New total `$570.00` exceeds the `$500.00` limit by `$70.00`.
-4. **Analyst calls**: `add_expense_record("Office Chair", 150.00, "2026-06-20", "Shopping")` ➔ returns `"Success"`
-5. **Analyst outputs**: `"⚠️ BUDGET WARNING: Logging this expense brings your monthly total to $570.00, which exceeds your monthly budget of $500.00 by $70.00!\nSuccessfully logged $150.00 for Office Chair under Shopping."`
+### 8.2 Slices
+- `D2-S1` (`2026-06-20`, planned):
+  - Problema: Lack of test suite for budget threshold validation.
+  - Fix aplicado: Implement `tests/test_analyst.py` with mock tools and budget logic asserts (TDD RED phase).
+  - commit: `local-doc-only`
+- `D2-S2` (`2026-06-20`, planned):
+  - Problema: Local storage capability and MCP tool endpoints are missing.
+  - Fix aplicado: Implement `src/mcp_server.py` providing file-based storage tools.
+  - commit: `local-doc-only`
+- `D2-S3` (`2026-06-20`, planned):
+  - Problema: Analyst Agent logic and tools integration are missing.
+  - Fix aplicado: Implement `AnalystAgent` logic in `src/agents.py`.
+  - commit: `local-doc-only`
+
+---
+
+## 9. Definition of Done (DoD)
+- [ ] Database read/write tools exposed via local MCP server.
+- [ ] Analyst Agent executes budget checking math correctly against the limit.
+- [ ] Analyst Agent triggers warning alert if budget limit is breached.
+- [ ] Unit tests in `tests/test_analyst.py` are passing.
