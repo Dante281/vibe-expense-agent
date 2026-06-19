@@ -75,7 +75,7 @@ The **Analyst Agent** evaluates the sanitized financial JSON payload emitted by 
 ### Automatizado
 ```bash
 # Run Analyst-specific tests
-pytest tests/test_analyst.py
+uv run pytest tests/test_analyst.py
 ```
 
 ### Manual

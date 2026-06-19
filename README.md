@@ -111,20 +111,11 @@ vibe-expense-agent/
    cd vibe-expense-agent
    ```
 
-2. **Create and Activate a Virtual Environment**
+2. **Install Dependencies & Set Up Virtual Environment**
+   Using `uv`, you can synchronize the environment and install dependencies in one step:
    ```bash
-   python -m venv .venv
-   # On Windows (PowerShell):
-   .venv\Scripts\Activate.ps1
-   # On Unix or MacOS:
-   source .venv/bin/activate
+   uv sync
    ```
-
-3. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(Note: Ensure `google-genai` / `google-labs-html-rpc` or ADK packages are installed as per course guidelines).*
 
 4. **Configure Environment Variables**
    Create a `.env` file in the root directory:
@@ -139,7 +130,7 @@ vibe-expense-agent/
 
 1. **Run the Interactive CLI**
    ```bash
-   python src/main.py
+   uv run src/main.py
    ```
 
 2. **Examples of Use**

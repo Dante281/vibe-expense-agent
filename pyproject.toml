@@ -1,0 +1,15 @@
+[project]
+name = "vibe-expense-agent"
+version = "0.1.0"
+description = "A Secure Multi-Agent Personal Finance Concierge"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "google-genai>=0.1.1",
+    "python-dotenv>=1.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]

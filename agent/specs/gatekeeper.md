@@ -72,7 +72,7 @@ The **Gatekeeper Agent** is the user-facing security shield. It acts as the pars
 ### Automatizado
 ```bash
 # Run Gatekeeper-specific tests
-pytest tests/test_gatekeeper.py
+uv run pytest tests/test_gatekeeper.py
 ```
 
 ### Manual

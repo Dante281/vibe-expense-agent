@@ -1,4 +1,0 @@
-# Package dependencies for Vibe Expense Agent
-google-genai>=0.1.1
-python-dotenv>=1.0.1
-pytest>=8.0.0
