@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D5`
 - Fase: `PH1`
-- Estado: `In progress`
+- Estado: `Completed`
 - Prioridad: `P1`
 - Owner: `Gatekeeper Agent`
 - Ultima actualizacion: `2026-06-20`
@@ -89,6 +89,6 @@ uv run pytest tests/test_gatekeeper.py -k test_gatekeeper_prompt_injection_detec
 ---
 
 ## 9. Definition of Done (DoD)
-- [ ] Known malicious prompt injection payloads are blocked.
-- [ ] `is_malicious` is correctly flagged as `true` with a valid reason.
-- [ ] Pytest checks pass.
+- [x] Known malicious prompt injection payloads are blocked.
+- [x] `is_malicious` is correctly flagged as `true` with a valid reason.
+- [x] Pytest checks pass.

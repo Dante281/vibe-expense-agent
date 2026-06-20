@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D1`
 - Fase: `PH1`
-- Estado: `In progress`
+- Estado: `Completed`
 - Prioridad: `P1`
 - Owner: `Gatekeeper Agent`
 - Ultima actualizacion: `2026-06-20`
@@ -90,5 +90,5 @@ uv run pytest tests/test_gatekeeper.py -k test_gatekeeper_valid_extraction
 ---
 
 ## 9. Definition of Done (DoD)
-- [ ] Schema extraction returns exact categories, parsed amounts, and format-verified dates.
-- [ ] Pytest validations pass.
+- [x] Schema extraction returns exact categories, parsed amounts, and format-verified dates.
+- [x] Pytest validations pass.

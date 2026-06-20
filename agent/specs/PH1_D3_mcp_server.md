@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D3`
 - Fase: `PH1`
-- Estado: `In progress`
+- Estado: `Completed`
 - Prioridad: `P1`
 - Owner: `Analyst Agent`
 - Ultima actualizacion: `2026-06-20`
@@ -87,5 +87,5 @@ The **Local MCP Server** acts as the data persistence layer. It exposes three se
 ---
 
 ## 9. Definition of Done (DoD)
-- [ ] Database read and write tools return success codes and persist data correctly.
-- [ ] monthly total calculations match the sum of items in `expenses.json`.
+- [x] Database read and write tools return success codes and persist data correctly.
+- [x] monthly total calculations match the sum of items in `expenses.json`.

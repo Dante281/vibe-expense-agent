@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D4`
 - Fase: `PH1`
-- Estado: `In progress`
+- Estado: `Completed`
 - Prioridad: `P1`
 - Owner: `Developer`
 - Ultima actualizacion: `2026-06-20`
@@ -85,5 +85,5 @@ The **Interactive CLI Wrapper** coordinates the user prompt execution loop. It t
 ---
 
 ## 9. Definition of Done (DoD)
-- [ ] User can input natural language sentences and get formatted outputs.
-- [ ] Environment secrets and configurations are successfully loaded.
+- [x] User can input natural language sentences and get formatted outputs.
+- [x] Environment secrets and configurations are successfully loaded.

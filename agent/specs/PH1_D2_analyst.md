@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D2`
 - Fase: `PH1`
-- Estado: `In progress`
+- Estado: `Completed`
 - Prioridad: `P1`
 - Owner: `Analyst Agent`
 - Ultima actualizacion: `2026-06-20`
@@ -89,5 +89,5 @@ uv run pytest tests/test_analyst.py
 ---
 
 ## 9. Definition of Done (DoD)
-- [ ] Analyst agent triggers warning statements for over-budget items.
-- [ ] Pytest checks pass.
+- [x] Analyst agent triggers warning statements for over-budget items.
+- [x] Pytest checks pass.

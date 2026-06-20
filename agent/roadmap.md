@@ -30,13 +30,13 @@ This is the current active execution sequence to construct and stabilize the ini
 | ID | Level | Element | Status | Priority | Effort | Completed Date |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **P1** | Project | [Vibe Expense Agent Concierge](#p1-vibe-expense-agent-concierge) | In Progress | - | - | - |
-| **PH1**| Phase | [Phase 1: Local CLI & Storage Core](#ph1-phase-1-local-cli--storage-core) | In Progress | P1 | M | |
-| **M1** | Milestone | [Secure CLI & File Storage Core functional](#m1-secure-cli--file-storage-core-functional) | In Progress | P1 | M | |
-| `D1`  | Deliverable | Gatekeeper Agent Sanitizer & Schema Parser | In Progress | P1 | S | |
-| `D2`  | Deliverable | Analyst Agent Budget Gate & Router | In Progress | P1 | S | |
-| `D3`  | Deliverable | Local file-based MCP Server | In Progress | P1 | S | |
-| `D4`  | Deliverable | Interactive CLI Interface wrapper | In Progress | P1 | S | |
-| `D5`  | Deliverable | Anti-Prompt Injection filters | In Progress | P1 | S | |
+| **PH1**| Phase | [Phase 1: Local CLI & Storage Core](#ph1-phase-1-local-cli--storage-core) | Completed | P1 | M | 2026-06-20 |
+| **M1** | Milestone | [Secure CLI & File Storage Core functional](#m1-secure-cli--file-storage-core-functional) | Completed | P1 | M | 2026-06-20 |
+| `D1`  | Deliverable | Gatekeeper Agent Sanitizer & Schema Parser | Completed | P1 | S | 2026-06-20 |
+| `D2`  | Deliverable | Analyst Agent Budget Gate & Router | Completed | P1 | S | 2026-06-20 |
+| `D3`  | Deliverable | Local file-based MCP Server | Completed | P1 | S | 2026-06-20 |
+| `D4`  | Deliverable | Interactive CLI Interface wrapper | Completed | P1 | S | 2026-06-20 |
+| `D5`  | Deliverable | Anti-Prompt Injection filters | Completed | P1 | S | 2026-06-20 |
 | **PH2**| Phase | [Phase 2: Web Dashboard & API](#ph2-phase-2-web-dashboard--api) | Planned | P2 | L | |
 | **M2** | Milestone | [Web UI for Expense Monitoring ready](#m2-web-ui-for-expense-monitoring-ready) | Planned | P2 | L | |
 | `D6`  | Deliverable | FastAPI Server exposing REST endpoints | Planned | P2 | M | |
