@@ -47,7 +47,7 @@ The **Interactive CLI Wrapper** coordinates the user prompt execution loop. It t
 - `src/main.py` - Core loop and configurations loading.
 
 #### Files touched (final)
-- *(To be completed when work is executed)*
+- [src/main.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/src/main.py) - Integrated agents and database loops, resolved console Unicode encoding crashes.
 
 ---
 
@@ -73,14 +73,14 @@ The **Interactive CLI Wrapper** coordinates the user prompt execution loop. It t
 ## 8. Estado y Slices
 
 ### 8.1 Estado
-- Estado actual: `In progress`
+- Estado actual: `Completed`
 - Ultima actualizacion: `2026-06-20`
 
 ### 8.2 Slices
 - `D4-S1` (`2026-06-20`, planned):
   - Problema: Lack of CLI entrypoint shell.
   - Fix aplicado: Implement basic command prompt loop and load configuration variables in `src/main.py`.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 
 ---
 

@@ -47,7 +47,8 @@ The **Anti-Prompt Injection Filters** are built into the Gatekeeper Agent's syst
 - `tests/test_gatekeeper.py` - Unit tests verifying block assertions.
 
 #### Files touched (final)
-- *(To be completed when work is executed)*
+- [src/agents.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/src/agents.py) - Added system prompts safety configurations and injection filters.
+- [tests/test_gatekeeper.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/tests/test_gatekeeper.py) - Verified prompt injection detection blocks.
 
 ---
 
@@ -73,18 +74,18 @@ uv run pytest tests/test_gatekeeper.py -k test_gatekeeper_prompt_injection_detec
 ## 8. Estado y Slices
 
 ### 8.1 Estado
-- Estado actual: `In progress`
+- Estado actual: `Completed`
 - Ultima actualizacion: `2026-06-20`
 
 ### 8.2 Slices
 - `D5-S1` (`2026-06-20`, planned):
   - Problema: No security test cases exist.
   - Fix aplicado: Implement `test_gatekeeper_prompt_injection_detection` in `tests/test_gatekeeper.py` asserting injection rejection.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 - `D5-S2` (`2026-06-20`, planned):
   - Problema: LLM is not instructed to detect prompt injection.
   - Fix aplicado: Formulate advanced instructions in the Gatekeeper system prompt and schema validator.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 
 ---
 

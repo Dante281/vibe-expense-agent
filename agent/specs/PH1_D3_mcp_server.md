@@ -48,7 +48,8 @@ The **Local MCP Server** acts as the data persistence layer. It exposes three se
 - `data/expenses.json` - Target database file.
 
 #### Files touched (final)
-- *(To be completed when work is executed)*
+- [src/mcp_server.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/src/mcp_server.py) - Implemented database operations and config paths.
+- [tests/conftest.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/tests/conftest.py) - Added test environment variables setup.
 
 ---
 
@@ -75,14 +76,14 @@ The **Local MCP Server** acts as the data persistence layer. It exposes three se
 ## 8. Estado y Slices
 
 ### 8.1 Estado
-- Estado actual: `In progress`
+- Estado actual: `Completed`
 - Ultima actualizacion: `2026-06-20`
 
 ### 8.2 Slices
 - `D3-S1` (`2026-06-20`, planned):
   - Problema: No file-based storage server is implemented.
   - Fix aplicado: Implement `src/mcp_server.py` defining the required database read/write tools.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0. Cabecera operativa (obligatoria)
 - Deliverable: `D2`
 - Fase: `PH1`
-- Estado: `Completed`
+- Estado: `In progress`
 - Prioridad: `P1`
 - Owner: `Analyst Agent`
 - Ultima actualizacion: `2026-06-20`

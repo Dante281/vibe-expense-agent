@@ -48,7 +48,8 @@ The **Gatekeeper Agent** parses raw natural language descriptions of expenses in
 - `tests/test_gatekeeper.py` - Assert parsing results.
 
 #### Files touched (final)
-- *(To be completed when work is executed)*
+- [src/agents.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/src/agents.py) - Added GatekeeperAgent structured extraction and Pydantic schema parser.
+- [tests/test_gatekeeper.py](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/tests/test_gatekeeper.py) - Verified valid inputs parsing.
 
 ---
 
@@ -81,11 +82,11 @@ uv run pytest tests/test_gatekeeper.py -k test_gatekeeper_valid_extraction
 - `D1-S1` (`2026-06-20`, planned):
   - Problema: Lack of test suite for valid text parsing.
   - Fix aplicado: Implement `test_gatekeeper_valid_extraction` in `tests/test_gatekeeper.py`.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 - `D1-S2` (`2026-06-20`, planned):
   - Problema: Gatekeeper parser logic is missing.
   - Fix aplicado: Implement parsing logic inside `src/agents.py` using Gemini client schemas.
-  - commit: `local-doc-only`
+  - commit: `d54f690`
 
 ---
 
