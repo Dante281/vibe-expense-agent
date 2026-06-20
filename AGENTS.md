@@ -13,12 +13,13 @@ This file serves as the context and instruction file for any AI assistant or cod
 We follow modular documentation practices. You MUST read and adhere to the specifications in the following files before planning or writing any code:
 
 1. **System Design & Roadmap**: See [agent/roadmap.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/roadmap.md)
-   - Understands the multi-agent message sequence.
-   - Summarizes development phases (CLI ➔ Web ➔ vision OCR).
-2. **Gatekeeper Agent Spec**: See [agent/specs/gatekeeper.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/gatekeeper.md)
-   - Defines system prompts, strict JSON extraction schema, and prompt injection filters.
-3. **Analyst Agent Spec**: See [agent/specs/analyst.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/analyst.md)
+   - Understands the multi-agent message sequence and phases.
+2. **Gatekeeper Agent Spec**: See [agent/specs/PH1_D1_gatekeeper.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D1_gatekeeper.md)
+   - Defines system prompts and strict JSON extraction schema.
+3. **Analyst Agent Spec**: See [agent/specs/PH1_D2_analyst.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D2_analyst.md)
    - Outlines budget checking logic and local MCP tools bindings.
+4. **Security Filters Spec**: See [agent/specs/PH1_D5_security_filters.md](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D5_security_filters.md)
+   - Defines strict prompt injection safety policies.
 
 ---
 

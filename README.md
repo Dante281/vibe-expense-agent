@@ -77,9 +77,10 @@ vibe-expense-agent/
 │
 ├── agent/                  # Agent specifications and developmental roadmaps
 │   ├── roadmap.md          # Multi-agent design philosophy and future releases
-│   └── specs/              # Detailed specification files for each agent
-│       ├── gatekeeper.md   # Gatekeeper Agent (Recibidor) role & schema specs
-│       └── analyst.md      # Analyst Agent (Contador) role & tool specs
+│   └── specs/              # Detailed specification files for each deliverable (D1 to D12)
+│       ├── PH1_D1_gatekeeper.md
+│       ├── PH1_D2_analyst.md
+│       └── ... (specs for each deliverable)
 │
 ├── data/
 │   └── expenses.json       # Local database storing expense records

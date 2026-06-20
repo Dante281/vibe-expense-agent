@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "date": "2026-06-20",
+    "category": "Food",
+    "description": "Mock burger",
+    "amount": 15.0
+  }
+]

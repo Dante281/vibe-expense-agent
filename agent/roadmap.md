@@ -64,34 +64,36 @@ This is the current active execution sequence to construct and stabilize the ini
 > **Milestone M1. Secure CLI & File Storage Core functional.** The user can safely input expenses in natural language, which are then sanitized, parsed, and logged to `expenses.json` by the agents using MCP tools.
 
 - **Specifications**:
-  - [Gatekeeper Agent Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/gatekeeper.md) handles `D1` and `D5`.
-  - [Analyst Agent Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/analyst.md) handles `D2` and `D3`.
-  - CLI execution loop in `src/main.py` handles `D4`.
+  - `D1`: [Gatekeeper Agent Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D1_gatekeeper.md)
+  - `D2`: [Analyst Agent Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D2_analyst.md)
+  - `D3`: [Local MCP Server Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D3_mcp_server.md)
+  - `D4`: [CLI Wrapper Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D4_cli_wrapper.md)
+  - `D5`: [Security Filters Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH1_D5_security_filters.md)
 
 ---
 
 ### PH2. Phase 2: Web Dashboard & API
 > **Milestone M2. Web UI for Expense Monitoring ready.** The CLI is augmented with a lightweight, secure web dashboard displaying analytics and status.
 
-- **Deliverables**:
-  - `D6`: FastAPI Backend to support the web UI.
-  - `D7`: Single Page Application (SPA) with curated HSL color schemes, dark mode support, and smooth micro-animations.
-  - `D8`: Dynamic SVG/CSS budget charts showing remaining allowance.
+- **Specifications**:
+  - `D6`: [FastAPI Backend Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH2_D6_fastapi_backend.md)
+  - `D7`: [Responsive Web UI Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH2_D7_web_ui.md)
+  - `D8`: [Interactive Budget Charts Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH2_D8_budget_charts.md)
 
 ---
 
 ### PH3. Phase 3: Multimodal OCR Scanning
 > **Milestone M3. Physical Receipt Processing functional.** Users can drag-and-drop or upload pictures of physical receipt tickets to parse them.
 
-- **Deliverables**:
-  - `D9`: MCP tools expanded to accept base64-encoded receipt images.
-  - `D10`: Analyst Agent utilizes Gemini Multimodal prompts to extract name, amount, date, and items from the image.
+- **Specifications**:
+  - `D9`: [File Uploader Tool Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH3_D9_uploader_tool.md)
+  - `D10`: [Gemini Vision Scanner Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH3_D10_vision_scanner.md)
 
 ---
 
 ### PH4. Phase 4: Smart Personalization
 > **Milestone M4. Contextual Predictions active.** The system improves over time by learning custom categorization defaults from user history.
 
-- **Deliverables**:
-  - `D11`: Search tool to query historically similar descriptions.
-  - `D12`: Local classification correction rules.
+- **Specifications**:
+  - `D11`: [History Lookup Tool Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH4_D11_history_lookup.md)
+  - `D12`: [Personal Prediction Heuristics Spec](file:///c:/Dev/github/Kaggle/5-Day%20AI%20Agents/Day%206%20Capstone%20Project/vibe-expense-agent/agent/specs/PH4_D12_prediction_heuristics.md)

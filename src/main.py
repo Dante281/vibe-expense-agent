@@ -8,7 +8,7 @@ load_dotenv()
 
 def main():
     print("==================================================")
-    print("      🪙  Vibe Expense Agent Concierge  🪙      ")
+    print("      $  Vibe Expense Agent Concierge  $      ")
     print("==================================================")
     print("Type your expense in natural language (e.g. 'spent $10 on lunch today')")
     print("Or type 'exit' to quit.\n")
@@ -32,12 +32,12 @@ def main():
             parsed = gatekeeper.process_input(user_input)
 
             if parsed.get("is_malicious"):
-                print(f"❌ Refused: {parsed.get('refusal_reason')}\n")
+                print(f"[Refused] {parsed.get('refusal_reason')}\n")
                 continue
 
             # 2. Analyst processes expense (checks budget and saves via MCP)
             response = analyst.process_expense(parsed)
-            print(f"🤖 {response}\n")
+            print(f"[Agent] {response}\n")
 
         except (KeyboardInterrupt, EOFError):
             print("\nGoodbye!")
